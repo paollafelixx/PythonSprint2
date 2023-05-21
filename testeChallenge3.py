@@ -18,7 +18,9 @@ def outros_serv():
 
 def veiculos_pesados():
     # Solicitando os dados para verificar se já é cliente Porto Seguro cadastrado
-    dados = float(input("Para prosseguir preciso que informe o CPF ou CNPJ: "))
+    global dados
+    global placa
+    dados = input("Para prosseguir preciso que informe o CPF ou CNPJ: ")
     placa = input("E a placa do veículo: ")
     cliente = 1
     if  cliente == 1:
@@ -96,7 +98,6 @@ def veiculos_pesados():
             destino()
             print()
             taxi()
-            print()
             confirma_solic()
         elif tp == 5:
             carac_veic_passageiros()
@@ -165,15 +166,13 @@ def carga():
 def peso():
     input("Informe o peso aproximado do veiculo: ")
 
-# Solicitando o endereço
+# Solicitando o endereço do veiculo
 def solic_endereco():
    global endereco
    endereco = (input("Por favor, informe o endereço ou envie a localização onde está o veiculo: "))
    print(endereco)
 
-
-
-# Solicitando referencia do endereço
+# Solicitando referencia do veiculo
 def ref():
     global referenc
     referenc = (input("Por favor, informe um ponto de referencia. Se não houver, digite não possui: "))
@@ -202,15 +201,20 @@ def taxi():
             end_taxi = input("Informe o endereço: ")
 
 
-# Confirmando os dados
+# Confirmando os dados e mostrando o resumo da solicitação
 def confirma_solic():
+    print("*********************************************************")
     print("Certo. Confira o resumo da sua solicitação: ")
+    print("CPF ou CNPJ: ", {dados})
+    print("Placa do veiculo: ", {placa})
     print("Localização: ", {endereco})
     print("Referencia: ", {referenc})
     if des == 1:
        print("Destino: ", {destino_local})
+       print("*********************************************************")
     else:
         print("Destino: A confirmar \n")
+        print("*********************************************************")
     conf = int(input("Está tudo correto? \n1- Sim \n2- Voltar o inicio \n3- Voltar para tipo de veiculo \n4- Voltar para localização do veiculo \n5- Voltar para destino final \nOpção: "))
     if conf == 1:
         print("Aguarde! Sua ajuda em breve estará a caminho!\n")
@@ -225,16 +229,6 @@ def confirma_solic():
     else:
         print("Opção invalida.")
     main()
-
-
-
-
-
-
-
-
-
-
 
 
 if (__name__ == "__main__"):
