@@ -111,7 +111,7 @@ def taxi():
             end_taxi = input("Informe o endereço: ")
 
 
-
+# Confirmando as informações para a solicitação
 def confirma_solic():
     print("Certo. Confira o resumo da sua solicitação: ")
     print("Localização: ", {endereco})
