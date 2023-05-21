@@ -13,8 +13,6 @@ def main():
         print("Opção invalida.")
         main()
 
-
-
 def outros_serv():
     print("Outros serviços.")
 
@@ -28,7 +26,43 @@ def veiculos_pesados():
         print("Certo, já encontrei seu cadastro! Você não possui historico de atendimentos anteriores! \nPara mais informações, você pode dizer qual tipo de veiculo pesado ele é?")
 
         tp = int(input("1- Trator \n2- Caminhão \n3- Carreta \n4- Veículo pessoal \n5- Veículo de passageiros \nOpção: "))
-        if tp == 3:
+        if tp == 1:
+            carac_trator()
+            print()
+            eixos()
+            print()
+            carga()
+            print()
+            peso()
+            print()
+            solic_endereco()
+            print()
+            ref()
+            print()
+            destino()
+            print()
+            taxi()
+            print()
+            confirma_solic()
+        elif tp == 2:
+            carac_caminhao()
+            print()
+            eixos()
+            print()
+            carga()
+            print()
+            peso()
+            print()
+            solic_endereco()
+            print()
+            ref()
+            print()
+            destino()
+            print()
+            taxi()
+            print()
+            confirma_solic()
+        elif tp == 3:
             carac_carreta()
             print()
             eixos()
@@ -46,8 +80,44 @@ def veiculos_pesados():
             taxi()
             print()
             confirma_solic()
+        elif tp == 4:
+            carac_veic_pessoal()
+            print()
+            eixos()
+            print()
+            carga()
+            print()
+            peso()
+            print()
+            solic_endereco()
+            print()
+            ref()
+            print()
+            destino()
+            print()
+            taxi()
+            print()
+            confirma_solic()
+        elif tp == 5:
+            carac_veic_passageiros()
+            print()
+            eixos()
+            print()
+            carga()
+            print()
+            peso()
+            print()
+            solic_endereco()
+            print()
+            ref()
+            print()
+            destino()
+            print()
+            taxi()
+            print()
+            confirma_solic()
         else:
-            print("")
+            print("Outros.")
 
     else:
         # Cliente não cadastrado
@@ -55,10 +125,31 @@ def veiculos_pesados():
             "Você ainda não possui cadastro com a Porto Seguro. Por gentileza entre em contato no telfone: XX-XXXX-XXXX.")
         main()
 
+# Exemplo com Trator
+def carac_trator():
+    print("Certo! Escolha entre as opções abaixo a que mais se encaixa como o seu veículo! Se não nenhuma das alternativas abaixo, selecione 'outros' '")
+    int(input("1- Trator de rodas \n2-Trator de rasto \n3- Trator normal ou standard \n4- Trator fruteiro \n5- Outros \nOpção: "))
+
+# Exemplo com Caminhão
+def carac_caminhao():
+    print("Certo! Escolha entre as opções abaixo a que mais se encaixa como o seu veículo! Se não nenhuma das alternativas abaixo, selecione 'outros' '")
+    int(input("1- VUC(Veículo Urbano de Carga) \n2-Caminhão Toco \n3- Caminhão Truck \n4- Cavalo Mecânico (ou Caminhão Extrapesado) \n5- Cavalo Mecânico Trucado (ou LS) \n6- Outros \nOpção: "))
+
 # Exemplo com Carreta
 def carac_carreta():
     print("Certo! Escolha entre as opções abaixo a que mais se encaixa como o seu veículo! Se não nenhuma das alternativas abaixo, selecione 'outros' '")
     int(input("1- Carreta Sider \n2- Carreta baú \n3- Carreta Cavalo Truckado \n4- Carreta Prancha \n5- Graneleira \n6- Carreta Rodotrem \n7- Carreta Bitrem/treminhão \n8- Outros \nOpção: "))
+
+# Exemplo com veiculo pessoal
+def carac_veic_pessoal():
+    print("Certo! Escolha entre as opções abaixo a que mais se encaixa como o seu veículo! Se não nenhuma das alternativas abaixo, selecione 'outros' '")
+    int(input("1- Caminhonete \n2- Carretinhas \n3- Van \n4- Micro-onibus \n5- Outros \nOpção: "))
+
+# Exemplo com veiculo de passageiros
+def carac_veic_passageiros():
+    print("Certo! Escolha entre as opções abaixo a que mais se encaixa como o seu veículo! Se não nenhuma das alternativas abaixo, selecione 'outros' '")
+    int(input("1- Onibus \n2- Micro-onibus \n3- Van \n4- Outros \nOpção: "))
+
 
 # Questionando se possui eixos
 def eixos():
@@ -91,7 +182,7 @@ def ref():
 # Solicitando endereço aonde o veiculo ira ficar
 def destino():
     global des
-    des = int(input("Preciso que informe aonde o guincho levará o veiculo. Você possui o endereço? (1- SIM ou 0- NÃO)"))
+    des = int(input("Preciso que informe aonde o guincho levará o veiculo. Você possui o endereço? (1- SIM ou 0- NÃO): "))
     if des == 1:
        global destino_local
        destino_local =(input("Por favor, digite o endereço completo! Digite assim: 'Rua (av. ou rod.) numero, cidade e estado': "))
@@ -111,7 +202,7 @@ def taxi():
             end_taxi = input("Informe o endereço: ")
 
 
-# Confirmando as informações para a solicitação
+# Confirmando os dados
 def confirma_solic():
     print("Certo. Confira o resumo da sua solicitação: ")
     print("Localização: ", {endereco})
